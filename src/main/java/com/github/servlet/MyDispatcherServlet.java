@@ -18,6 +18,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * sunlihuo
+ */
 public class MyDispatcherServlet extends HttpServlet {
     private Properties p = new Properties();
 
