@@ -27,7 +27,7 @@ public class DemoController {
 
     @MyRequestMapping("/edit.json")
     public void edit(HttpServletResponse response,
-                      @MyRequestParam("name") String name) throws IOException {
+                     @MyRequestParam("name") String name) throws IOException {
 
         String result = demoService.get(name);
         response.getWriter().write(result);
