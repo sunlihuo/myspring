@@ -238,10 +238,15 @@ public class MyDispatcherServlet extends HttpServlet {
         }
 
         //设置方法中的request和response对象
-        int reqIndex = handler.paramIndexMapping.get(HttpServletRequest.class.getName());
-        paramValues[reqIndex] = req;
-        int respIndex = handler.paramIndexMapping.get(HttpServletResponse.class.getName());
-        paramValues[respIndex] = resp;
+        Integer reqIndex = handler.paramIndexMapping.get(HttpServletRequest.class.getName());
+        if (reqIndex != null){
+            paramValues[reqIndex] = req;
+        }
+        Integer respIndex = handler.paramIndexMapping.get(HttpServletResponse.class.getName());
+        if (respIndex != null) {
+            paramValues[respIndex] = resp;
+        }
+
 
         try {
             handler.method.invoke(handler.controller, paramValues);
